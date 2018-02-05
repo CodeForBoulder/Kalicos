@@ -1,41 +1,37 @@
-import { 
-	RECEIVE_ALL_ORGANIZATIONS, 
-	RECEIVE_ADDED_ORGANIZATION, 
+import {
+	RECEIVE_ALL_ORGANIZATIONS,
+	RECEIVE_ADDED_ORGANIZATION,
 	RECEIVE_UDPATED_ORGANIZATION,
 	RECEIVE_ORGANIZATIONS_BY_LOCATION
-} from '../actions/organizations'
+} from '../actions/organizations';
 
-const organizationsReducerDefaultState = []
+const organizationsReducerDefaultState = [];
 
-const organizationsReducer = (state = organizationsReducerDefaultState, action) => {
+const organizationsReducer = (
+	state = organizationsReducerDefaultState,
+	action
+) => {
 	switch (action.type) {
 		case RECEIVE_ALL_ORGANIZATIONS:
-			return [
-				...action.organizations
-			]
+			return [...action.organizations];
 		case RECEIVE_ORGANIZATIONS_BY_LOCATION:
-			return [
-				...action.organizations
-			]
+			return [...action.organizations];
 		case RECEIVE_ADDED_ORGANIZATION:
-			return [
-				...state,
-				action.organization
-			]
+			return [...state, action.organization];
 		case RECEIVE_UDPATED_ORGANIZATION:
-			return state.map((organization) => {
+			return state.map(organization => {
 				if (organization._id === action.updates._id) {
 					return {
 						...organization,
 						...action.updates
-					}
+					};
 				} else {
-					return organization
+					return organization;
 				}
-			})
+			});
 		default:
-			return state
+			return state;
 	}
-}
+};
 
-export default organizationsReducer
+export default organizationsReducer;
