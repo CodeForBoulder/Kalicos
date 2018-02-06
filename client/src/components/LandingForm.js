@@ -21,29 +21,29 @@ class LandingForm extends Component {
 	handleUserInput(e) {
 		const name = e.target.name;
 		const value = e.target.value;
+
 		this.setState({ [name]: value }, () => {
 			this.validateField(name, value);
 		});
 	}
 
 	validateField(fieldName, value) {
-		let { fieldValidationErrors, locationValid } = this.state;
+		let fieldValidationErrors = this.state.formErrors;
+		let locationValid = this.state.locationValid;
 
 		// 80020
-		const zipRegEx = /(^[0-9]{5}(-[0-9]{4})?$)|(^[ABCEGHJKLMNPRSTVXY]{1}[0-9]{1}[A-Z]{1} *[0-9]{1}[A-Z]{1}[0-9]{1}$)/;
-
-		const locationRegEx =
-			/(^[0-9]{5}(-[0-9]{4})?$)|(^[ABCEGHJKLMNPRSTVXY]{1}[0-9]{1}[A-Z]{1} *[0-9]{1}[A-Z]{1}[0-9]{1}$)/ |
-			/^[A-Za-z ]+(?:,?\s+)[A-Za-z]{2,}$/gm;
+		// regex = /(^[0-9]{5}(-[0-9]{4})?$)|(^[ABCEGHJKLMNPRSTVXY]{1}[0-9]{1}[A-Z]{1} *[0-9]{1}[A-Z]{1}[0-9]{1}$)/;
 
 		// Boulder, CO OR Boulder co
-		const cityStateRegEx = /^[A-Za-z ]+(?:,?\s+)[A-Za-z]{2,}$/gm;
+		// regex= /^[A-Za-z ]+(?:,?\s+)[A-Za-z]{2,}$/gm;
+
+		// City,ST + Zipcode RegEx
+		const locationRegEx = /(^[0-9]{5}(-[0-9]{4})?$)|(^[ABCEGHJKLMNPRSTVXY]{1}[0-9]{1}[A-Z]{1} *[0-9]{1}[A-Z]{1}[0-9]{1}$)|(^[A-Za-z ]+(?:,?\s+)[A-Za-z]{2,}$)/gm;
 
 		//TODO full address and add all 3 regex to below to be tested/validated\
 		// 1600 Range St #101, Boulder, CO 80301
-		const fullAddressRegEx = '';
+		// const fullAddressRegEx = '';
 
-		// 80301 DONE
 		switch (fieldName) {
 			case 'location':
 				locationValid = value.match(locationRegEx);
