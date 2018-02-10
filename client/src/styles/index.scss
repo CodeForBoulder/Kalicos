@@ -1,13 +1,95 @@
-html, 
-body {
-    height: 100%;
-    margin: 0 auto;
-    min-height: 100%;
-    width: 100%;
+// VARIABLES *****************
+// *******************************
+:root {
+	//COLORS
+	--primary-bg-color: white;
+	--secondary-bg-color: #4c87c1;
+	--button-primary-color: #0456a1;
+	--button-primary-hover-color: var(--nav-link-color);
+	--nav-link-color: #00a175;
+	--nav-link-hover-color: var(--button-primary-color);
+
+	// FONTS
+
+	// --headerFont: 'Helvetica Neue', sans-serif;
+	// --bodyFont: 'Georgia', serif;
+	--primary-font-color: hsla(0, 0%, 0%, 0.8);
+	--secondary-font-color: white;
+	--tertiary-font-color: #005c7c;
+	--lineHeight: 1.5;
+	--baseFontSize: 112.5%; /* 18px */
+	/* Type scale */
+	--ratio: 1.414; /* Augmented fourth */
+	/* Each step of the scale is a power
+    of --ratio
+ */
+	--stepUp1: calc(1em * var(--ratio));
+	--stepUp2: calc(var(--stepUp1) * var(--ratio));
+	--stepUp3: calc(var(--stepUp2) * var(--ratio));
+	--stepDown1: calc(1em / var(--ratio));
 }
+// MIXINS ************************
+// *******************************
+
+@mixin breakpoint($point) {
+	@if $point == desktop {
+		@media (min-width: 48em) {
+			@content;
+		}
+	} @else if $point == tablet {
+		@media (min-width: 32em) {
+			@content;
+		}
+	}
+}
+
+// FONT SETTINGS *****************
+// *******************************
+
+html {
+	font-size: var(--baseFontSize);
+	color: var(--primary-font-color);
+	line-height: var(--lineHeight);
+	font-family: var(--bodyFont);
+}
+
+h1,
+h2,
+h3 {
+	margin: var(--stepUp1) 0 0.5em;
+	font-family: var(--headerFont);
+	line-height: 1.2;
+}
+
+h1 {
+	font-size: var(--stepUp3);
+}
+
+h2 {
+	font-size: var(--stepUp2);
+}
+
+h3 {
+	font-size: var(--stepUp1);
+}
+
+small {
+	font-size: var(--stepDown1);
+}
+
+// BASE SETTINGS *****************
+// *******************************
 
 * {
 	box-sizing: border-box;
+}
+
+html,
+body {
+	height: 100%;
+	margin: 0 auto;
+	min-height: 100%;
+	width: 100%;
 }
 
 ul {
