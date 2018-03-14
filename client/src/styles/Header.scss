@@ -1,22 +1,19 @@
 .header {
-	margin: 10px auto 30px;
+	margin: 2.5em auto;
 	width: 72%;
-}
+	display: grid;
 
-.header * {
-	display: inline-block;
-}
-
-.logo {
-	color: #005c7c;
-	display: inline-block;
-	width: 23%;
-}
-
-.headersearch {
-	display: inline-block;
-	text-align: right;
-	width: 77%;
+	.logo {
+		color: var(--tertiary-font-color);
+	}
+	.headersearch {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+	@media (min-width: 48em) {
+		grid-template-columns: 1fr 3fr;
+	}
 }
 
 .navbar {

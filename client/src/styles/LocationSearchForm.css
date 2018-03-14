@@ -1,16 +1,33 @@
-.locationsearchform h3 {
-  margin-right: 10px; }
-
-.locationsearchform input {
-  height: 35px;
-  margin-right: 10px; }
-
-button {
-  background-color: #00a175;
-  color: white;
-  padding-top: 2px;
-  height: 40px;
-  width: 75px; }
-
-button:hover {
-  background-color: #0456a1; }
+.locationSearchform form {
+  display: grid;
+  grid-gap: 0.5rem; }
+  .locationSearchform form label {
+    font-size: var(--baseFontSize);
+    font-weight: bolder;
+    text-align: center; }
+  .locationSearchform form input {
+    height: 2rem;
+    margin-right: 10px; }
+  .locationSearchform form .has-focus {
+    border-color: blue;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(136, 173, 58, 0.4) !important; }
+  .locationSearchform form .has-error {
+    border-color: red;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(136, 173, 58, 0.4) !important; }
+  .locationSearchform form .valid {
+    border-color: var(--nav-link-color);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(136, 173, 58, 0.4) !important; }
+  .locationSearchform form button {
+    background-color: var(--button-primary-color);
+    color: white;
+    padding-top: 2px;
+    height: 2rem;
+    width: 100%; }
+    .locationSearchform form button:hover {
+      background-color: var(--button-primary-hover-color); }
+  @media (min-width: 48em) {
+    .locationSearchform form {
+      grid-template-columns: 2fr 3fr 10%; }
+      .locationSearchform form label {
+        font-size: var(--stepUp1);
+        text-align: right; } }

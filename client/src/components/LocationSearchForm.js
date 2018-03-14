@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import '../styles/LocationSearchForm.css'
-import { FormErrors } from './FormErrors'
+// import { FormErrors } from './FormErrors'
 
 class LocationSearchForm extends Component {
 	constructor(props) {
@@ -9,7 +9,8 @@ class LocationSearchForm extends Component {
 			location: '',
 			formErrors: { location: '' },
 			locationValid: false,
-			formValid: false
+			formValid: false,
+			inputClass: ''
 		}
 
 		this.handleUserInput = this.handleUserInput.bind(this)
@@ -24,6 +25,9 @@ class LocationSearchForm extends Component {
 
 		this.setState({ [name]: value }, () => {
 			this.validateField(name, value)
+		})
+		this.setState({
+			inputClass: this.errorClass(this.state.formErrors.location)
 		})
 	}
 
@@ -66,36 +70,37 @@ class LocationSearchForm extends Component {
 	}
 
 	errorClass(error) {
-		return error.length === 0 ? '' : 'has-error'
+		return error.length === 0 ? 'valid' : 'has-error'
 	}
 
+	// <div className="panel panel-default">
+	// 	<FormErrors formErrors={this.state.formErrors} />
+	// </div>
+	// <div
+	// 	className={`form-group ${this.errorClass(
+	// 		this.state.formErrors.location
+	// 	)}`}
+	// >
+
 	render() {
+		const { inputClass, formValid, location } = this.state
 		return (
-			<div className="locationsearchform">
-			<h3>Find a charity near</h3>
+			<div className="locationSearchform">
 				<form onSubmit={this.handleSubmit}>
-					<div className="panel panel-default">
-						<FormErrors formErrors={this.state.formErrors} />
-					</div>
-					<div
-						className={`form-group ${this.errorClass(
-							this.state.formErrors.location
-						)}`}
-					>
-						<label htmlFor="location">Location</label>
-						<input
-							type="text"
-							required
-							className="form-control"
-							id="location"
-							name="location"
-							placeholder="Boulder, CO"
-							value={this.state.location}
-							onChange={this.handleUserInput}
-						/>
-					</div>
-					<button type="submit" disabled={!this.state.formValid}>
-						Search
+					<label htmlFor="location">Find a charity near</label>
+					<input
+						type="text"
+						required
+						className={`form-control ${inputClass}`}
+						id="location"
+						name="location"
+						placeholder="City, ST OR Zipcode "
+						value={location}
+						onChange={this.handleUserInput}
+					/>
+
+					<button type="submit" disabled={!formValid}>
+						GO!
 					</button>
 				</form>
 			</div>
