@@ -1,0 +1,48 @@
+# import this environment into Anaconda with the following commands:
+#     conda env create -f environment.yml
+#     conda activate globalcharityfinder
+
+name: globalcharityfinder
+channels:
+  - conda-forge
+  - r
+  - defaults
+dependencies:
+  - httplib2=0.10.3=py36_0
+  - ca-certificates=2018.03.07=0
+  - certifi=2018.4.16=py36_0
+  - intel-openmp=2018.0.0=8
+  - json-c=0.12.1=h6b7fe83_2
+  - libcxx=4.0.1=h579ed51_0
+  - libcxxabi=4.0.1=hebd6815_0
+  - libgfortran=3.0.1=h93005f0_2
+  - mkl=2018.0.2=1
+  - mkl_fft=1.0.1=py36h917ab60_0
+  - mkl_random=1.0.1=py36h78cc56f_0
+  - numpy=1.14.2=py36ha9ae307_1
+  - openssl=1.0.2o=h26aff7b_0
+  - pandas=0.23.0=py36h1702cab_0
+  - pip=9.0.1=py36_1
+  - pymongo=3.4.0=py36_0
+  - python=3.6.2=0
+  - python-dateutil=2.7.3=py36_0
+  - pytz=2018.4=py36_0
+  - readline=6.2=2
+  - setuptools=36.4.0=py36_1
+  - simplejson=3.13.2=py36_0
+  - six=1.11.0=py36h0e22d5e_1
+  - sqlite=3.13.0=0
+  - tk=8.5.18=0
+  - wheel=0.29.0=py36_0
+  - xz=5.2.3=0
+  - zlib=1.2.11=0
+  - pip:
+    - chardet==3.0.4
+    - idna==2.6
+    - oauthlib==2.0.7
+    - object-detection==0.1
+    - pysocks==1.6.8
+    - requests==2.18.4
+    - requests-oauthlib==0.8.0
+    - urllib3==1.22
+
