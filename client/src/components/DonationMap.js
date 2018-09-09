@@ -3,15 +3,11 @@ import { connect } from 'react-redux'
 import { mapsApiKey } from '../config'
 import GoogleMapReact from 'google-map-react'
 import selectOrganizations from '../selectors/organizations'
-import { setSelectedModal } from '../actions/userControl'
+import { Place } from '@material-ui/icons'
 
 const MarkerPoints = ({ text }) => 
-  <div 
-    style={{
-      position: 'relative', color: 'white', background: 'red',
-      height: 25, width: 50, top: 0, left: 0,    
-    }}
-  >
+  <div>
+	<Place />
     {text}
   </div> 
 
