@@ -9,6 +9,13 @@
             "request": "launch",
             "name": "Launch Server",
             "program": "${workspaceFolder}/server/src/server.js",
+        },
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "Launch Chrome",
+            "url": "http://localhost:3000",
+            "webRoot": "${workspaceFolder}/client"
         }
     ]
 }
