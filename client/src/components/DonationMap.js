@@ -9,7 +9,7 @@ const MarkerPoints = ({ text }) =>
   <div>
 	<Place />
     {text}
-  </div> 
+  </div>
 
 const DonationMap = (props) => (
 	// Important! Always set the container height explicitly
