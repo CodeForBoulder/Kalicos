@@ -7,7 +7,7 @@ used to ensure the server and test suites are up and fully functional. (we can r
 **Example Response**
 ```json
 {
-  "welcome": "hello and welcome to the Kalios rest server!"
+  "welcome": "hello and welcome to the Kalicos rest server!"
 }
 ```
 

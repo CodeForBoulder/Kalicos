@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import '../styles/LocationSearchForm.css'
 import { FormErrors } from './FormErrors'
 
 class LocationSearchForm extends Component {

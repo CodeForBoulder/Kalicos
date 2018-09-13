@@ -1,6 +1,6 @@
-# Kalios Rest API Server
+# Kalicos Rest API Server
 
-This is the rest API for the Kalios project. This contains all the endpoints for interacting with the Kalios db as well as serving up the client (as of right now the client is not currently configured to run on this server).
+This is the rest API for the Kalicos project. This contains all the endpoints for interacting with the Kalicos db as well as serving up the client (as of right now the client is not currently configured to run on this server).
 
 Read our [documentation](./apiReference.md) for the rest API.
 
@@ -10,7 +10,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-To run this project locally you must have Node, npm, and MogoDB installed on your machine. 
+To run this project locally you must have Node, npm, and MongoDB installed on your machine. 
 
 ### Installing and Running Locally
 
@@ -48,9 +48,3 @@ more to come here eventually but the projects is not currently deployed for prod
 * [MongoDB](https://www.mongodb.com/) - Database
 * [React](https://facebook.github.io/react/) - Front End Framework
 * [Mongoose](http://mongoosejs.com/) - MongoDB ODM
-
-## Authors
-
-* **Jesse Croxford** - [Jesse's Profile](https://github.com/Jcroxford)
-
-*add your information here everyone!*

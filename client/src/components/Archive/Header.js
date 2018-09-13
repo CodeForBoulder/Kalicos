@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router'
 import { NavLink } from 'react-router-dom'
-import '../styles/Header.css'
 import LocationSearch from './LocationSearch'
 
 class Header extends Component {

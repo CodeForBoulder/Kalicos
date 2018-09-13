@@ -1,17 +1,17 @@
 {
-  "name": "kalios-rest",
+  "name": "kalicos-rest",
   "version": "0.0.0",
-  "description": "Rest API for Kalios project",
+  "description": "Rest API for Kalicos project",
   "main": "server.js",
   "scripts": {
     "test": "export NODE_ENV=test || SET \"NODE_ENV=test\" && mocha tests/**/*.test.js",
     "test:watch": "nodemon --exec \" npm i && npm test\"",
-    "start": "npm run lint && node server.js",
+    "start": "npm run lint && node src/server.js",
     "dev": "./node_modules/.bin/nodemon --exec \"npm i && npm start\"",
     "lint": "eslint .",
-    "lint:fix": "eslint **/*.js --fix && eslint server.js --fix"
+    "lint:fix": "eslint **/*.js --fix && eslint src/server.js --fix"
   },
-  "author": "Kalios Team",
+  "author": "Kalicos Team",
   "license": "MIT",
   "dependencies": {
     "axios": "^0.16.2",

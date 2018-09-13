@@ -3,7 +3,7 @@ const { ObjectID } = require('mongodb')
 const Organizations = require('../models/organizationModel')
 
 // seed data from spreadsheet
-const organizations = [
+const seedOrganizations = [
   {
     _id:   new ObjectID(),
     name:  'CU Heritage Center',
@@ -54,22 +54,26 @@ const organizations = [
   }
 ]
 
-const populateOrganizations = (done) => {
-  console.log('POPULATED ORGANIZATIONS')
-  Organizations
-    .remove({})
-    .then(() => {
-      const addOrganizations = []
+const populateOrganizations = async (done) => {
+  if(await Organizations.countDocuments().exec() <= seedOrganizations.length) {
+    Organizations
+      .remove({})
+      .then(() => {
+        const addOrganizations = []
 
-      organizations.forEach(organization => {
-        addOrganizations.push(new Organizations(organization).save())
+        seedOrganizations.forEach(organization => {
+          addOrganizations.push(new Organizations(organization).save())
+        })
+
+        return Promise.all(addOrganizations)
       })
-
-      return Promise.all(addOrganizations)
-    })
+    console.log('POPULATED ORGANIZATIONS')
+  } else {
+    console.log('ORGANIZATIONS ALREADY POPULATED')
+  }
 }
 
 module.exports = {
-  organizations,
+  seedOrganizations,
   populateOrganizations
 }
