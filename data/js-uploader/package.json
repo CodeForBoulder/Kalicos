@@ -1,0 +1,10 @@
+{
+  "name": "tyr",
+  "main": "index.js",
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "csv": "^3.1.0",
+    "mongodb": "^3.1.1"
+  }
+}
