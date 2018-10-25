@@ -1,0 +1,4 @@
+node_modules
+all_nonprofits.csv
+output.json
+package-lock.json

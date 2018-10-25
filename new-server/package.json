@@ -1,0 +1,32 @@
+{
+  "name": "odin",
+  "version": "0.1.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon src/server.js",
+    "test": "export NODE_ENV=test && mocha --timeout 8000",
+    "test:integration": "export NODE_ENV=test && mocha test/integration/**/*.test.js --timeout 8000",
+    "test:unit": "export NODE_ENV=test && mocha test/unit/**/*.test.js --timeout 8000"
+  },
+  "author": "Christopher Codrington",
+  "license": "ISC",
+  "dependencies": {
+    "@google/maps": "^0.5.5",
+    "axios": "^0.18.0",
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.4",
+    "express": "^4.16.3",
+    "express-jwt": "^5.3.1",
+    "joi": "^13.4.0",
+    "jwks-rsa": "^1.3.0",
+    "lodash": "^4.17.10",
+    "mongodb": "^3.1.1"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^5.2.0",
+    "nodemon": "^1.18.4",
+    "supertest": "^3.1.0"
+  }
+}
